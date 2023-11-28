@@ -3,41 +3,21 @@ import React from "react";
 import { Button, Text, TextInput } from "react-native-paper";
 
 export default function ForgotForms({ navigation }) {
-    const [showPass, setShowPass] = React.useState(false);
-    const [showRePass, setShowRePass] = React.useState(false);
   return (
     <View styles={{ flex: 1}}>
       <Text 
-      style={{fontSize: 35, justifyContent: 'center'}}
-      >Restore Password</Text>
+      style={{fontSize: 25, justifyContent: 'center'}}
+      >Forgot Password or Email</Text>
       
       <TextInput
         mode="outlined"
-        placeholder="Enter Old Password"
-        label="Old Password"
-        secureTextEntry={showPass}
-        right={
-          <TextInput.Icon
-            icon={!showPass ? "eye" : "eye-off"}
-            onPress={() => setShowPass(!showPass)}
-          />
-        }
+        placeholder="Email"
+        label="Email"
         style={{ marginTop: 10 }}
+
       />
       
-      <TextInput
-        mode="outlined"
-        placeholder="Enter New Password"
-        label="New Password"
-        secureTextEntry={showPass}
-        right={
-          <TextInput.Icon
-            icon={!showPass ? "eye" : "eye-off"}
-            onPress={() => setShowRePass(!showRePass)}
-          />
-        }
-        style={{ marginTop: 10 }}
-      />
+      
 
       <Button mode='contained' style={{ marginTop: 10, borderRadius: 5,}}>
       Enter
