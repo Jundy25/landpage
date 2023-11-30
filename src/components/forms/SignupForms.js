@@ -13,44 +13,49 @@ export default function SignupForms({navigation}) {
                 placeholder='Name'
                 label='Name'
                 style={{ marginTop: 10}}
-                error={true}/>
+                error={false}/>
                 
                 <TextInput
                 mode='outlined'
                 placeholder='Email'
                 label='Email'
                 style={{ marginTop: 10}}
-                error={true}/>
+                error={false}/>
 
                 <TextInput
-                mode='outlined'
-                placeholder='Enter Password'
-                label='Enter Password'
-                secureTextEntry={showRePass}
-                right={
+                    mode="outlined"
+                    placeholder="Enter Password"
+                    label="Enter Password"
+                    secureTextEntry={showPass}
+                    right={
                     <TextInput.Icon
-                    icon={!showPass ? 'eye' : 'eye-off'}
-                    onPress={() => setShowPass(!showPass)}/>
-                }
-                style={{marginTop: 10}}/>
+                        icon={!showPass ? "eye" : "eye-off"}
+                        onPress={() => setShowPass(!showPass)}
+                    />
+                    }
+                    style={{ marginTop: 10 }}
+                />
 
                 <TextInput
                 mode='outlined'
                 placeholder='Confirm Password'
                 label='Confirm Password'
-                secureTextEntry={showRePass}
+                secureTextEntry={showPass}
                 right={
-                    <TextInput.Icon
-                    icon={!showPass ? 'eye' : 'eye-off'}
-                    onPress={() => setShowPass(!showPass)}/>
+                <TextInput.Icon
+                    icon={!showPass ? "eye" : "eye-off"}
+                    onPress={() => setShowPass(!showPass)}
+                />
                 }
-                style={{marginTop: 10}}/>
+                style={{ marginTop: 10 }}/>
 
-                <Button icon='account-plus' mode='contained' style={{ marginTop: 10, borderRadius: 5,}}>
+                <Button
+                onPress={() => navigation.navigate("Main")}
+                icon='account-plus' mode='contained' style={{ marginTop: 10, borderRadius: 5,}}>
                     Register
                 </Button>
 
-                <Text variant='titleSmall' style={{marginTop: 20,}}>Already have an account? <Button onPress={() => navigation.pop()}>Login</Button></Text>
+                <Text variant='titleSmall' style={{marginTop: 20,}}>Already have an account? <Text style={{color:"blue", textDecorationLine: "underline"}} onPress={() => navigation.pop()}>Login</Text></Text>
 
             </View>
         );

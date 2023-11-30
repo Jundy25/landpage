@@ -15,7 +15,7 @@ export default function LoginForms({ navigation }) {
         placeholder="Email"
         label="Email"
         style={{ marginTop: 10 }}
-        error={true}
+        error={false}
       />
       <TextInput
         mode="outlined"
@@ -31,16 +31,26 @@ export default function LoginForms({ navigation }) {
         style={{ marginTop: 10 }}
       />
 
-      <Text>Forgot your <Button onPress={() => navigation.navigate("ForgotForms")}>Password</Button></Text>
+      <View
+        style={{
+          marginTop: 10,
+          alignItems: 'row',
+          flexDirection: 'row',
+          justifyContent: 'flex-start',
+        }}>
+      <Text>Forgot your <Text style={{color:"blue", textDecorationLine: "underline"}} onPress={() => navigation.navigate("ForgotForms")}>Password</Text></Text>
+      </View>
 
-      <Button icon="login" mode="contained" style={{ marginTop: 10, borderRadius: 5, }}>
+      <Button 
+      onPress={() => navigation.navigate("Main")}
+      icon="login" mode="contained" style={{ marginTop: 10, borderRadius: 5, }}>
         Login
       </Button>
 
-      <Text> Don't have any account ?
-      <Button onPress={() => navigation.navigate("Register")}>
+      <Text style={{marginTop: 10,}}> Don't have any account ?
+      <Text style={{color:"blue", textDecorationLine: "underline",}} onPress={() => navigation.navigate("Register")}>
         Signup
-      </Button>
+      </Text>
       </Text>
     </View>
   );
